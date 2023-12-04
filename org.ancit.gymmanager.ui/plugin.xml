@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.ancit.gymmanager.ui.perspective.GymManagerPerspective"
+            id="org.ancit.gymmanager.ui.perspective.GymManagerPerspective"
+            name="GymManager">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="org.ancit.gymmanager.ui.views.GymDetailsView"
+            id="org.ancit.gymmanager.ui.views.GymDetailsView"
+            name="Gym Details View">
+      </view>
+      <view
+            class="org.ancit.gymmanager.ui.views.MemberDetailsView"
+            id="org.ancit.gymmanager.ui.views.MemberDetailsView"
+            name="Member Details">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="org.ancit.gymmanager.ui.views.MemberDetailsView"
+            targetID="org.ancit.gymmanager.ui.views.MemberDetailsView">
+         <menu
+               id="org.ancit.gymmanager.ui.memberdetailsmenu"
+               label="Add Member"
+               path="additions">
+         </menu>
+         <action
+               class="org.ancit.gymmanager.ui.actions.AddMemberAction"
+               id="org.ancit.gymmanager.ui.addmemberaction"
+               label="Add Member"
+               menubarPath="org.ancit.gymmanager.ui.memberdetailsmenu/additions"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </viewContribution>
+      <viewContribution
+            id="org.ancit.gymmanager.ui.views.MemberDetailsView1"
+            targetID="org.ancit.gymmanager.ui.views.MemberDetailsView">
+         <action
+               class="org.ancit.gymmanager.ui.actions.AddPlanDetailsAction"
+               id="org.ancit.gymmanager.ui.AddPlanDetailsAction"
+               label="Add Plan Details"
+               style="push"
+               toolbarPath="additions">
+         </action>
+      </viewContribution>
+   </extension>
+
+</plugin>
